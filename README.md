@@ -8,7 +8,7 @@ Homebrew (aka, Brew) formulae
 brew tap tekumara/tap
 ```
 
-You can then install any of the [formulae][Formula/] by name, eg:
+You can then install any of the [formulae](Formula/) by name, eg:
 
 ```
 brew install awsweb
