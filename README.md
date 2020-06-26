@@ -11,5 +11,5 @@ brew tap tekumara/tap
 You can then install any of the [formulae](Formula/) by name, eg:
 
 ```
-brew install ....
+brew install tekumara/tap/helm@2.13.1
 ```
