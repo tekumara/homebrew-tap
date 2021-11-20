@@ -2,7 +2,6 @@ class Parfait < Formula
     desc "A command-line tool for creating and managing cloudformation stacks"
     homepage "https://github.com/lox/parfait"
     version "1.1.3"
-    bottle :unneeded
 
     if OS.mac?
       url "https://github.com/lox/parfait/releases/download/v1.1.3/parfait_darwin_amd64"
