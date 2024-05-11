@@ -9,38 +9,38 @@ class GhDoctor < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/tekumara/gh-doctor/releases/download/v0.0.3/gh-doctor_Darwin_x86_64.tar.gz"
-      sha256 "82fa5093f2c7cccafe0671acf6a667b7da77dbe8022c5ae6b37cc1f5bff8a127"
+      url "https://github.com/tekumara/gh-doctor/releases/download/v0.0.3/gh-doctor-darwin-amd64"
+      sha256 "374e6415eeb53a174b96ac9d5cba21a7bba9f8492f41a3949170f8006b12fba9"
 
       def install
-        bin.install "gh-doctor"
+        bin.install "gh-doctor-darwin-amd64" => "gh-doctor"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/tekumara/gh-doctor/releases/download/v0.0.3/gh-doctor_Darwin_aarch64.tar.gz"
-      sha256 "8150236e7330852c50b603675c798350013476ad6f64c8473e6206a2e8e1723d"
+      url "https://github.com/tekumara/gh-doctor/releases/download/v0.0.3/gh-doctor-darwin-arm64"
+      sha256 "f0f080060f22b0e9b70930e6c06addf1611f2c2a101394dabb91eca2ae7d4905"
 
       def install
-        bin.install "gh-doctor"
+        bin.install "gh-doctor-darwin-arm64" => "gh-doctor"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/tekumara/gh-doctor/releases/download/v0.0.3/gh-doctor_Linux_x86_64.tar.gz"
-      sha256 "c04c1395c99e2ca635724dccf75618723c2c356faec7626063043bdc772b0d05"
+      url "https://github.com/tekumara/gh-doctor/releases/download/v0.0.3/gh-doctor-linux-amd64"
+      sha256 "39a3d4b2cc4fe137b9781465e881cc0fd544d01cfa4b96bb56f296618501e12e"
 
       def install
-        bin.install "gh-doctor"
+        bin.install "gh-doctor-linux-amd64" => "gh-doctor"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/tekumara/gh-doctor/releases/download/v0.0.3/gh-doctor_Linux_aarch64.tar.gz"
-      sha256 "9cf49d04ffd1683050b19180a68dbe0bd9473e2e2f7b3e81c08cae198087178a"
+      url "https://github.com/tekumara/gh-doctor/releases/download/v0.0.3/gh-doctor-linux-arm64"
+      sha256 "9b0c743bf3dc2ed36090064639904b735c31b3d6863dcc17b5fcb3d052d1a39b"
 
       def install
-        bin.install "gh-doctor"
+        bin.install "gh-doctor-linux-arm64" => "gh-doctor"
       end
     end
   end
