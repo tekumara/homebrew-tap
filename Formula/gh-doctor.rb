@@ -5,20 +5,20 @@
 class GhDoctor < Formula
   desc "GitHub Doctor creates SSH keys and uploads them to your account"
   homepage "https://github.com/tekumara/gh-doctor"
-  version "0.2.0"
+  version "0.3.0"
 
   on_macos do
-    on_intel do
-      url "https://github.com/tekumara/gh-doctor/releases/download/v0.2.0/gh-doctor-darwin-amd64"
-      sha256 "3bf6587f63166b330fd94fd87cf55eb60b48d91a19feddc0dbacba8d310ece18"
+    if Hardware::CPU.intel?
+      url "https://github.com/tekumara/gh-doctor/releases/download/v0.3.0/gh-doctor-darwin-amd64"
+      sha256 "f0f896eacf6fd369d9077cc714d43bb24073f4f6c40c94aa37ae3d6f8308ffad"
 
       def install
         bin.install "gh-doctor-darwin-amd64" => "gh-doctor"
       end
     end
-    on_arm do
-      url "https://github.com/tekumara/gh-doctor/releases/download/v0.2.0/gh-doctor-darwin-arm64"
-      sha256 "2ce4d7232345ab530d0104a788a376ac53c122ee942092d2a33f9b26b233b268"
+    if Hardware::CPU.arm?
+      url "https://github.com/tekumara/gh-doctor/releases/download/v0.3.0/gh-doctor-darwin-arm64"
+      sha256 "0340bd68c2a5685e323d942374f3d71b8c054228d359fc1c0e41ceccdc854062"
 
       def install
         bin.install "gh-doctor-darwin-arm64" => "gh-doctor"
@@ -27,24 +27,18 @@ class GhDoctor < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/tekumara/gh-doctor/releases/download/v0.2.0/gh-doctor-linux-amd64"
-        sha256 "da7241b54d6b7d5ff9c61b8d080433e823195dc9ca32fb4e5766507935ede9b1"
-
-        def install
-          bin.install "gh-doctor-linux-amd64" => "gh-doctor"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tekumara/gh-doctor/releases/download/v0.3.0/gh-doctor-linux-amd64"
+      sha256 "611ea0273c884ad27cdb73959e9f90023b37eae1510b1542326edf160dfc378e"
+      def install
+        bin.install "gh-doctor-linux-amd64" => "gh-doctor"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/tekumara/gh-doctor/releases/download/v0.2.0/gh-doctor-linux-arm64"
-        sha256 "17c607fde0645c5e059ef30c0e9c13bf9b54afb17b14201e0b3c1a04d760f919"
-
-        def install
-          bin.install "gh-doctor-linux-arm64" => "gh-doctor"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/tekumara/gh-doctor/releases/download/v0.3.0/gh-doctor-linux-arm64"
+      sha256 "c31467bdcbfcc3f614c28b8ee92ed81213d42b5a88241fe340ca1c0887f599ba"
+      def install
+        bin.install "gh-doctor-linux-arm64" => "gh-doctor"
       end
     end
   end
